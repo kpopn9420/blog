@@ -4,7 +4,7 @@
   "description": "Personal portfolio website of Hsieh Yi-Ting (AI Engineer), built with React and Vite.",
   "type": "module",
   "main": "src/main.jsx",
-  "homepage": "https://kpopn9420.github.io",
+  "homepage": "https://kpopn9420.github.io/blog",
   "scripts": {
     "dev": "vite",
     "start": "vite",
