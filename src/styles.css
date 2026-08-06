@@ -292,6 +292,31 @@ svg { display: block; }
   color: var(--accent);
 }
 
+/* ---------- Moments gallery ---------- */
+.moments { margin-top: clamp(2.5rem, 6vw, 4rem); }
+.moments__title { font-size: 1.05rem; color: var(--text); margin-bottom: 1.2rem; }
+.moments__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+.moment {
+  margin: 0;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  aspect-ratio: 4 / 3;
+}
+.moment__img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.moment:hover .moment__img { transform: scale(1.06); }
+.moment__caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 1.6rem 1rem 0.8rem;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72), transparent);
+}
+
 /* ---------- Projects ---------- */
 .projects { background: var(--bg-soft); }
 .projects__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
@@ -318,6 +343,8 @@ svg { display: block; }
                     radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.18) 0, transparent 40%);
 }
 .card__thumb-num { position: relative; font-family: var(--font-display); font-weight: 800; font-size: 3rem; color: rgba(255, 255, 255, 0.85); }
+.card__thumb-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.card:hover .card__thumb-img { transform: scale(1.05); }
 .card__body { padding: 1.4rem; display: flex; flex-direction: column; gap: 0.7rem; flex: 1; }
 .card__title { font-size: 1.25rem; }
 .card__desc { color: var(--text-soft); font-size: 0.97rem; margin: 0; flex: 1; }
