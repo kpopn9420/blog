@@ -1,35 +1,36 @@
 {
   "name": "my-portfolio-site",
-  "version": "1.0.0",
-  "description": "A personal portfolio website built with React and Bootstrap.",
-  "main": "src/index.js",
+  "version": "2.0.0",
+  "description": "Personal portfolio website of Hsieh Yi-Ting (AI Engineer), built with React and Vite.",
+  "type": "module",
+  "main": "src/main.jsx",
   "homepage": "https://kpopn9420.github.io",
   "scripts": {
+    "dev": "vite",
     "start": "vite",
     "build": "vite build",
+    "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/my-portfolio-site.git"
+    "url": "https://github.com/kpopn9420/blog.git"
   },
   "keywords": [
     "portfolio",
     "react",
-    "bootstrap",
+    "vite",
     "website"
   ],
-  "author": "Your Name",
+  "author": "Hsieh Yi-Ting",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "^5.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-scroll": "^1.8.5"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",
-    "vite": "^2.0.0"
+    "vite": "^2.9.18"
   }
 }
