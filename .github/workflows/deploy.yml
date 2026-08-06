@@ -1,7 +1,11 @@
 name: Deploy to GitHub Pages
 
-# 每次 push 到 main 就自動建置並部署到 gh-pages 分支。
-# Builds the site and publishes it to the gh-pages branch on every push to main.
+# 使用「GitHub Actions」官方方式發佈（不再經過會卡住的 gh-pages 內建發佈任務）。
+# Publishes via the official GitHub Pages Actions flow (no dependency on the
+# flaky branch-based "pages build and deployment" job).
+#
+# ⚠️ 需搭配設定：Settings → Pages → Build and deployment → Source 選「GitHub Actions」。
+# Requires: Settings → Pages → Build and deployment → Source = "GitHub Actions".
 
 on:
   push:
@@ -9,14 +13,16 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: pages-deploy
-  cancel-in-progress: true
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,8 +39,21 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
