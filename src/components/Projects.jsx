@@ -1,13 +1,18 @@
 import { useApp } from '../context/AppContext';
 import { useReveal } from '../hooks';
-import { Github, External } from './Icons';
+import { asset } from '../i18n';
+import { External } from './Icons';
 
-function ProjectCard({ project, labels, index }) {
+function ProjectCard({ project, index }) {
   const ref = useReveal();
   return (
     <article className="card reveal" ref={ref} style={{ transitionDelay: `${index * 90}ms` }}>
-      <div className="card__thumb" aria-hidden="true">
-        <span className="card__thumb-num">{String(index + 1).padStart(2, '0')}</span>
+      <div className="card__thumb" aria-hidden={project.image ? undefined : 'true'}>
+        {project.image ? (
+          <img className="card__thumb-img" src={asset(project.image)} alt={project.name} loading="lazy" />
+        ) : (
+          <span className="card__thumb-num">{String(index + 1).padStart(2, '0')}</span>
+        )}
       </div>
       <div className="card__body">
         <h3 className="card__title">{project.name}</h3>
@@ -18,16 +23,13 @@ function ProjectCard({ project, labels, index }) {
           ))}
         </ul>
         <div className="card__links">
-          {project.github && (
-            <a href={project.github} target="_blank" rel="noopener noreferrer" className="card__link">
-              <Github /> {labels.viewCode}
-            </a>
-          )}
-          {project.demo && (
-            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="card__link">
-              <External /> {labels.viewDemo}
-            </a>
-          )}
+          {project.links
+            .filter((l) => l.url)
+            .map((l) => (
+              <a key={l.label} href={l.url} target="_blank" rel="noopener noreferrer" className="card__link">
+                <External /> {l.label}
+              </a>
+            ))}
         </div>
       </div>
     </article>
@@ -49,7 +51,7 @@ export default function Projects() {
         </div>
         <div className="projects__grid">
           {p.items.map((project, i) => (
-            <ProjectCard key={i} index={i} project={project} labels={p} />
+            <ProjectCard key={i} index={i} project={project} />
           ))}
         </div>
       </div>
