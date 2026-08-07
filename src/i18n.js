@@ -10,6 +10,7 @@ export const content = {
     nav: {
       home: '首頁',
       about: '關於我',
+      experience: '經歷',
       projects: '作品',
       contact: '聯絡',
     },
@@ -41,9 +42,60 @@ export const content = {
     },
     moments: [
       { img: 'moment-graduation.jpg', caption: '研究所畢業' },
-      { img: 'moment-microsoft.jpg', caption: '參訪 Microsoft' },
       { img: 'moment-tsmc.jpg', caption: '台積電 IMC Day 2024 競賽' },
     ],
+    experience: {
+      kicker: '經歷',
+      title: '在實作之外持續拓展視野',
+      subtitle: '從校園品牌推廣、科技社群到跨域競賽與女性科技人才培育，這些經歷形塑了我的合作、溝通與實踐能力。',
+      items: [
+        {
+          period: '2026',
+          organization: 'Micron',
+          category: 'Mentorship',
+          title: 'Global Women’s Mentorship Program',
+          description: '完成 Micron Global Women’s Mentorship Program 2026，透過 mentorship 與產業交流，拓展科技職涯與全球視野。',
+          monogram: 'MW',
+        },
+        {
+          period: '2025',
+          organization: 'Microsoft',
+          category: 'Community',
+          title: 'Coding Angels 2025',
+          description: '參與 Microsoft Coding Angels 2025，透過程式學習、社群交流與科技職涯活動，持續累積實作與協作經驗。',
+          image: 'moment-microsoft.jpg',
+          imageAlt: 'Microsoft Coding Angels 2025 活動紀錄',
+        },
+        {
+          period: '2025',
+          organization: 'GDG on Campus',
+          category: 'Hackathon',
+          title: 'DevJam TW 2025',
+          description: '參與 DevJam TW 2025 黑客松，與跨校開發者密集協作，把構想快速轉化為可展示的原型。',
+          image: 'experience-devjam.webp',
+          imageAlt: 'DevJam TW 2025 參賽者合照',
+        },
+        {
+          period: '2025',
+          organization: '國立政治大學',
+          category: 'Award',
+          title: '創意點子黑客松',
+          description: '與「TD」團隊參賽，經評選獲得「創意點子變現獎」，累積從概念發想、提案到競賽表達的經驗。',
+          image: 'experience-creative-award.webp',
+          imageAlt: '2025 創意點子黑客松創意點子變現獎證書',
+          imageContain: true,
+        },
+        {
+          period: '第 4 屆',
+          organization: 'Logitech G',
+          category: 'Campus Ambassador',
+          title: '羅技校園大使',
+          description: '擔任第四屆羅技校園大使，參與品牌活動、校園推廣與社群交流，培養活動企劃與跨校協作能力。',
+          image: 'experience-logitech.webp',
+          imageAlt: '第四屆羅技校園大使活動合照',
+        },
+      ],
+    },
     projects: {
       kicker: '作品集',
       title: '我做過的專案',
@@ -129,6 +181,7 @@ export const content = {
     nav: {
       home: 'Home',
       about: 'About',
+      experience: 'Experience',
       projects: 'Work',
       contact: 'Contact',
     },
@@ -160,9 +213,60 @@ export const content = {
     },
     moments: [
       { img: 'moment-graduation.jpg', caption: 'Graduating from my M.S.' },
-      { img: 'moment-microsoft.jpg', caption: 'Visiting Microsoft' },
       { img: 'moment-tsmc.jpg', caption: 'TSMC IMC Day 2024 contest' },
     ],
+    experience: {
+      kicker: 'Experience',
+      title: 'Growing beyond the projects I build',
+      subtitle: 'Campus leadership, developer communities, hackathons, and mentorship have strengthened how I collaborate, communicate, and turn ideas into action.',
+      items: [
+        {
+          period: '2026',
+          organization: 'Micron',
+          category: 'Mentorship',
+          title: 'Global Women’s Mentorship Program',
+          description: 'Completed the Micron Global Women’s Mentorship Program 2026, gaining broader perspectives on technology careers and the global semiconductor industry through mentorship and industry exchange.',
+          monogram: 'MW',
+        },
+        {
+          period: '2025',
+          organization: 'Microsoft',
+          category: 'Community',
+          title: 'Coding Angels 2025',
+          description: 'Joined Microsoft Coding Angels 2025 to keep building hands-on, collaborative experience through coding, community exchange, and technology career activities.',
+          image: 'moment-microsoft.jpg',
+          imageAlt: 'Microsoft Coding Angels 2025 event',
+        },
+        {
+          period: '2025',
+          organization: 'GDG on Campus',
+          category: 'Hackathon',
+          title: 'DevJam TW 2025',
+          description: 'Participated in the DevJam TW 2025 hackathon, collaborating intensively with student developers from different campuses to turn an idea into a presentable prototype.',
+          image: 'experience-devjam.webp',
+          imageAlt: 'DevJam TW 2025 participants',
+        },
+        {
+          period: '2025',
+          organization: 'National Chengchi University',
+          category: 'Award',
+          title: 'Creative Ideas Hackathon',
+          description: 'Competed with team “TD” and received the Creative Idea Monetization Award, gaining experience across ideation, pitching, and competition presentation.',
+          image: 'experience-creative-award.webp',
+          imageAlt: 'Creative Idea Monetization Award certificate from the 2025 Creative Ideas Hackathon',
+          imageContain: true,
+        },
+        {
+          period: '4th Cohort',
+          organization: 'Logitech G',
+          category: 'Campus Ambassador',
+          title: 'Logitech Campus Ambassador',
+          description: 'Served in the fourth cohort of Logitech campus ambassadors, supporting brand activities, campus outreach, and community engagement while developing event-planning and cross-campus collaboration skills.',
+          image: 'experience-logitech.webp',
+          imageAlt: 'Fourth-cohort Logitech campus ambassadors',
+        },
+      ],
+    },
     projects: {
       kicker: 'Portfolio',
       title: 'Things I have built',
@@ -244,7 +348,7 @@ export const content = {
   },
 };
 
-export const SECTIONS = ['home', 'about', 'projects', 'contact'];
+export const SECTIONS = ['home', 'about', 'experience', 'projects', 'contact'];
 
 // 圖片路徑輔助：自動加上部署的 base 路徑（本機為 /，線上為 /blog/）
 export const asset = (file) => `${import.meta.env.BASE_URL}img/${file}`;
