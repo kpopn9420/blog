@@ -17,6 +17,7 @@ function ProjectCard({ project, index }) {
       <div className="card__body">
         <h3 className="card__title">{project.name}</h3>
         <p className="card__desc">{project.description}</p>
+        {project.status && <p className="card__status">{project.status}</p>}
         <ul className="tags">
           {project.tags.map((tag) => (
             <li className="tag" key={tag}>{tag}</li>

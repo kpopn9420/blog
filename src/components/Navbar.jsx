@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { useActiveSection } from '../hooks';
-import { SECTIONS } from '../i18n';
+import { asset, SECTIONS } from '../i18n';
 import { Sun, Moon } from './Icons';
 
 export default function Navbar() {
@@ -28,7 +28,7 @@ export default function Navbar() {
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="nav__inner">
         <a href="#home" className="nav__brand" onClick={(e) => go(e, 'home')}>
-          <span className="nav__brand-mark">宜</span>
+          <img className="nav__brand-avatar" src={asset('profile.webp')} alt="" aria-hidden="true" />
           <span className="nav__brand-text">{lang === 'zh' ? '謝宜庭' : 'Yi-Ting'}</span>
         </a>
 

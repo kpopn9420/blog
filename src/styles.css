@@ -146,6 +146,19 @@ svg { display: block; }
   gap: 1rem;
 }
 .nav__brand { display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-display); font-weight: 700; }
+.nav__brand-avatar {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 38%;
+  border: 2px solid var(--bg-elev);
+  outline: 2px solid var(--accent);
+  box-shadow: 0 8px 20px -10px rgba(109, 92, 255, 0.9);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.nav__brand:hover .nav__brand-avatar { transform: scale(1.06); box-shadow: 0 10px 24px -9px rgba(109, 92, 255, 0.95); }
 .nav__brand-mark {
   display: grid;
   place-items: center;
@@ -348,6 +361,16 @@ svg { display: block; }
 .card__body { padding: 1.4rem; display: flex; flex-direction: column; gap: 0.7rem; flex: 1; }
 .card__title { font-size: 1.25rem; }
 .card__desc { color: var(--text-soft); font-size: 0.97rem; margin: 0; flex: 1; }
+.card__status {
+  margin: 0;
+  padding: 0.75rem 0.85rem;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  background: var(--ring);
+  color: var(--text-soft);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
 .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .tag {
   font-size: 0.78rem; font-weight: 600;
@@ -356,7 +379,7 @@ svg { display: block; }
   background: var(--ring);
   color: var(--accent);
 }
-.card__links { display: flex; gap: 1rem; margin-top: 0.3rem; }
+.card__links { display: flex; flex-wrap: wrap; gap: 0.7rem 1rem; margin-top: 0.3rem; }
 .card__link { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; font-size: 0.9rem; color: var(--text-soft); transition: color 0.2s ease; }
 .card__link svg { width: 17px; height: 17px; }
 .card__link:hover { color: var(--accent); }
@@ -391,7 +414,12 @@ svg { display: block; }
 }
 .field input::placeholder, .field textarea::placeholder { color: var(--text-faint); }
 .field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px var(--ring); }
+.field input:disabled, .field textarea:disabled { opacity: 0.7; cursor: wait; }
+.hp-field { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.btn:disabled { opacity: 0.72; cursor: wait; transform: none; box-shadow: none; }
 .contact__note { font-size: 0.8rem; color: var(--text-faint); margin: 0.9rem 0 0; text-align: center; }
+.contact__note--success { color: #168252; font-weight: 600; }
+.contact__note--error { color: #c24141; font-weight: 600; }
 
 /* ---------- Footer ---------- */
 .footer { border-top: 1px solid var(--border); padding: 2.5rem 0; background: var(--bg-elev); }

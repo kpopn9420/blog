@@ -3,22 +3,38 @@ import { useApp } from '../context/AppContext';
 import { useReveal } from '../hooks';
 import { Mail, Github, Linkedin, Arrow } from './Icons';
 
+const FORM_ENDPOINT = 'https://formspree.io/f/xgvadwer';
+
 export default function Contact() {
   const { t } = useApp();
   const c = t.contact;
   const ref = useReveal();
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState('idle');
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    const data = new FormData(e.target);
-    const subject = encodeURIComponent(`Website message from ${data.get('name') || ''}`);
-    const body = encodeURIComponent(`${data.get('message') || ''}\n\n— ${data.get('name') || ''} (${data.get('email') || ''})`);
-    // 用 mailto 開啟郵件軟體 / open the user's mail client
-    window.location.href = `mailto:${c.email}?subject=${subject}&body=${body}`;
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    data.append('_subject', `Portfolio message from ${data.get('name') || 'a visitor'}`);
+    setStatus('submitting');
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (!response.ok) throw new Error('Form submission failed');
+      form.reset();
+      setStatus('success');
+    } catch {
+      setStatus('error');
+    }
   };
+
+  const submitting = status === 'submitting';
+  const feedback = status === 'success' ? c.sent : status === 'error' ? c.error : c.note;
 
   return (
     <section id="contact" className="section contact">
@@ -52,24 +68,33 @@ export default function Contact() {
             </ul>
           </div>
 
-          <form className="contact__form" onSubmit={onSubmit}>
+          <form
+            className="contact__form"
+            action={FORM_ENDPOINT}
+            method="POST"
+            onSubmit={onSubmit}
+            aria-busy={submitting}
+          >
             <h3>{c.formTitle}</h3>
+            <input className="hp-field" type="text" name="_gotcha" tabIndex="-1" autoComplete="off" />
             <div className="field">
               <label htmlFor="name">{c.nameLabel}</label>
-              <input id="name" name="name" type="text" placeholder={c.namePlaceholder} required />
+              <input id="name" name="name" type="text" placeholder={c.namePlaceholder} disabled={submitting} required />
             </div>
             <div className="field">
               <label htmlFor="email">{c.emailLabel}</label>
-              <input id="email" name="email" type="email" placeholder={c.emailPlaceholder} required />
+              <input id="email" name="email" type="email" placeholder={c.emailPlaceholder} disabled={submitting} required />
             </div>
             <div className="field">
               <label htmlFor="message">{c.messageLabel}</label>
-              <textarea id="message" name="message" rows="4" placeholder={c.messagePlaceholder} required />
+              <textarea id="message" name="message" rows="4" placeholder={c.messagePlaceholder} disabled={submitting} required />
             </div>
-            <button type="submit" className="btn btn--primary btn--full">
-              {sent ? c.sent : c.send} {!sent && <Arrow />}
+            <button type="submit" className="btn btn--primary btn--full" disabled={submitting}>
+              {submitting ? c.sending : c.send} {!submitting && <Arrow />}
             </button>
-            <p className="contact__note">{c.note}</p>
+            <p className={`contact__note contact__note--${status}`} role="status" aria-live="polite">
+              {feedback}
+            </p>
           </form>
         </div>
       </div>
