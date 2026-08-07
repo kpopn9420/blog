@@ -10,6 +10,7 @@ export const content = {
     nav: {
       home: '首頁',
       about: '關於我',
+      experience: '經歷',
       projects: '作品',
       contact: '聯絡',
     },
@@ -37,19 +38,152 @@ export const content = {
         { icon: 'chip', label: '電子工程背景' },
         { icon: 'code', label: '全端開發' },
       ],
-      momentsTitle: '一些精彩時刻',
+      educationTitle: '學習歷程',
     },
-    moments: [
-      { img: 'moment-graduation.jpg', caption: '研究所畢業' },
-      { img: 'moment-microsoft.jpg', caption: '參訪 Microsoft' },
-      { img: 'moment-tsmc.jpg', caption: '台積電 IMC Day 2024 競賽' },
+    education: [
+      {
+        period: '2020.06',
+        school: '桃園市立內壢高級中等學校',
+        degree: '高中畢業',
+        logo: 'school-neili.webp',
+        logoAlt: '桃園市立內壢高級中等學校校徽',
+      },
+      {
+        period: '2024.06',
+        school: '元智大學',
+        degree: '電機工程學系乙組・學士',
+        logo: 'school-yzu.webp',
+        logoAlt: '元智大學校徽',
+      },
+      {
+        period: '2026.08',
+        school: '國立臺灣科技大學',
+        degree: '電子工程系研究所甲組・碩士',
+        logo: 'school-ntust.webp',
+        logoAlt: '國立臺灣科技大學校徽',
+      },
     ],
+    experience: {
+      kicker: '經歷',
+      title: '在實作之外持續拓展視野',
+      subtitle: '從校園品牌推廣、科技社群到跨域競賽與女性科技人才培育，這些經歷形塑了我的合作、溝通與實踐能力。',
+      items: [
+        {
+          period: '2026',
+          organization: 'Micron',
+          category: 'Mentorship',
+          title: 'Global Women’s Mentorship Program',
+          description: '完成 Micron Global Women’s Mentorship Program 2026，透過 mentorship 與產業交流，拓展科技職涯與全球視野。',
+          image: 'experience-micron.webp',
+          imageAlt: 'Micron Global Women’s Mentorship Program 2026 完訓證書',
+          imageContain: true,
+        },
+        {
+          period: '2025',
+          organization: 'Microsoft',
+          category: 'Community',
+          title: 'Coding Angels 2025',
+          description: '參與 Microsoft Coding Angels 2025，透過程式學習、社群交流與科技職涯活動，持續累積實作與協作經驗。',
+          image: 'moment-microsoft.jpg',
+          imageAlt: 'Microsoft Coding Angels 2025 活動紀錄',
+        },
+        {
+          period: '2025',
+          organization: 'GDG on Campus',
+          category: 'Hackathon',
+          title: 'DevJam TW 2025',
+          description: '參與 DevJam TW 2025 黑客松，與跨校開發者密集協作，把構想快速轉化為可展示的原型。',
+          image: 'experience-devjam.webp',
+          imageAlt: 'DevJam TW 2025 參賽者合照',
+        },
+        {
+          period: '2025',
+          organization: '國立政治大學',
+          category: 'Award',
+          title: '創意點子黑客松',
+          description: '與「TD」團隊參賽，經評選獲得「創意點子變現獎」，累積從概念發想、提案到競賽表達的經驗。',
+          image: 'experience-creative-award.webp',
+          imageAlt: '2025 創意點子黑客松創意點子變現獎證書',
+          imageContain: true,
+        },
+        {
+          period: '第 4 屆',
+          organization: 'Logitech G',
+          category: 'Campus Ambassador',
+          title: '羅技校園大使',
+          description: '擔任第四屆羅技校園大使，參與品牌活動、校園推廣與社群交流，培養活動企劃與跨校協作能力。',
+          image: 'experience-logitech.webp',
+          imageAlt: '第四屆羅技校園大使活動合照',
+        },
+        {
+          period: '2024',
+          organization: 'TSMC',
+          category: 'Award',
+          title: 'IMC Day 2024 競賽佳作',
+          description: '參與台積電 IMC Day 2024 競賽並獲得佳作，累積技術提案、團隊協作與競賽表達經驗。',
+          image: 'moment-tsmc.jpg',
+          imageAlt: '台積電 IMC Day 2024 競賽佳作紀錄',
+        },
+      ],
+    },
     projects: {
       kicker: '作品集',
       title: '我做過的專案',
-      subtitle: '從生成式 AI 到全端系統——以下是我實作過的一些作品。',
+      subtitle: '依技術主題整理，並保留學習階段標籤；每一區皆由較新的作品開始呈現。',
+      groups: [
+        {
+          id: 'generative',
+          period: 'GENERATIVE AI / AGENTS',
+          title: '生成式 AI 與智慧代理',
+          description: '從研究助理、履歷分析到新聞迷因，探索生成式 AI 的應用與產品化。',
+        },
+        {
+          id: 'vision',
+          period: 'COMPUTER VISION / EDGE AI',
+          title: '電腦視覺與 Edge AI',
+          description: '涵蓋模型訓練、即時辨識與嵌入式部署，連結演算法、影像處理與硬體。',
+        },
+        {
+          id: 'software',
+          period: 'SOFTWARE / WEB',
+          title: '軟體與網站系統',
+          description: '以資料庫、桌面應用與網站開發為核心，建立完整的操作與營運流程。',
+        },
+      ],
       items: [
         {
+          stage: 'graduate',
+          stageLabel: '研究所',
+          category: 'generative',
+          rank: 70,
+          name: '研究論文助理 AI Agent',
+          description:
+            '以 LangGraph 建立具動態工具調度能力的研究助理，整合 ChromaDB / SQLite RAG、PDF 論文上傳、arXiv 檢索與論文比較，並以 Streamlit 提供操作介面。',
+          tags: ['LangGraph', 'RAG', 'ChromaDB', 'Streamlit'],
+          image: 'project-research-agent.svg',
+          status: '課程版本已完成核心流程；目前 PDF metadata 解析較依賴固定格式，檢索資料集與套件版本也較固定，後續可加入更穩健的解析、評測與依賴更新。',
+          links: [],
+        },
+        {
+          stage: 'graduate',
+          stageLabel: '研究所',
+          category: 'vision',
+          rank: 70,
+          name: 'Edge AI 交通標誌辨識',
+          description:
+            '以 MobileNetV2 訓練 GTSRB 43 類交通標誌，轉換為 TensorFlow Lite 後部署於 Raspberry Pi，結合 USB 攝影機、HSV ROI 偵測與 CLAHE，在邊緣裝置完成即時辨識。',
+          tags: ['MobileNetV2', 'TensorFlow Lite', 'Raspberry Pi', 'OpenCV'],
+          image: 'project-traffic-sign.webp',
+          status: '實機 Demo 約 6 FPS、單次推論約 90 - 96 ms，呈現模型、影像處理與硬體協作的完整流程。',
+          links: [
+            { label: '觀看 Demo', url: 'demo/traffic-sign-recognition.mp4', internal: true },
+          ],
+        },
+        {
+          stage: 'undergraduate',
+          stageLabel: '大學',
+          category: 'generative',
+          rank: 50,
           name: 'MEMER',
           description:
             '結合 GPT-3 與 DALL·E 的 AI 新聞迷因產生器，後端以 Flask + MySQL 打造，並提供社群作品展示。研究聚焦於用生成式 AI 提升年輕世代對時事的關注。',
@@ -62,6 +196,10 @@ export const content = {
           ],
         },
         {
+          stage: 'undergraduate',
+          stageLabel: '大學',
+          category: 'software',
+          rank: 40,
           name: '餐廳管理系統',
           description:
             '以 JavaFX 打造的餐廳管理桌面應用，串接 MySQL 資料庫，涵蓋點餐、菜單與帳號管理等營運流程。',
@@ -70,6 +208,10 @@ export const content = {
           links: [{ label: '示範影片', url: 'https://youtu.be/UREnQsBJj5M' }],
         },
         {
+          stage: 'undergraduate',
+          stageLabel: '大學',
+          category: 'software',
+          rank: 30,
           name: '線上點餐網站',
           description:
             '一個線上點餐網站，具備商品瀏覽、購物車與結帳流程，採用 JSP / Servlet 搭配 MySQL 開發。',
@@ -78,6 +220,10 @@ export const content = {
           links: [{ label: '示範影片', url: 'https://youtu.be/BcejJcJS1b8' }],
         },
         {
+          stage: 'graduate',
+          stageLabel: '研究所',
+          category: 'generative',
+          rank: 60,
           name: '履歷健檢顧問（團隊專案）',
           description:
             '讓使用者上傳履歷，由 Aya Vision 8B 分析內容並提供改善建議，也能產生面試題目協助練習，服務以 React、Flask 與 Docker 建置。',
@@ -86,6 +232,10 @@ export const content = {
           links: [{ label: '示範影片', url: 'https://youtu.be/er43JJh4aD4?si=jnkCgPaC2PcVc-2Z' }],
         },
         {
+          stage: 'undergraduate',
+          stageLabel: '大學',
+          category: 'vision',
+          rank: 50,
           name: '人臉辨識系統',
           description:
             '深度學習課程專案：以同學照片建立資料集，使用 MTCNN 偵測人臉，再以 FaceNet 完成人臉特徵擷取與身分辨識。',
@@ -129,6 +279,7 @@ export const content = {
     nav: {
       home: 'Home',
       about: 'About',
+      experience: 'Experience',
       projects: 'Work',
       contact: 'Contact',
     },
@@ -156,19 +307,152 @@ export const content = {
         { icon: 'chip', label: 'Electronic Engineering' },
         { icon: 'code', label: 'Full-stack Development' },
       ],
-      momentsTitle: 'A few highlights',
+      educationTitle: 'Education',
     },
-    moments: [
-      { img: 'moment-graduation.jpg', caption: 'Graduating from my M.S.' },
-      { img: 'moment-microsoft.jpg', caption: 'Visiting Microsoft' },
-      { img: 'moment-tsmc.jpg', caption: 'TSMC IMC Day 2024 contest' },
+    education: [
+      {
+        period: '2020.06',
+        school: 'Taoyuan Municipal Nei-Li Senior High School',
+        degree: 'High School Diploma',
+        logo: 'school-neili.webp',
+        logoAlt: 'Taoyuan Municipal Nei-Li Senior High School emblem',
+      },
+      {
+        period: '2024.06',
+        school: 'Yuan Ze University',
+        degree: 'B.S., Electrical Engineering, Group B',
+        logo: 'school-yzu.webp',
+        logoAlt: 'Yuan Ze University emblem',
+      },
+      {
+        period: '2026.08',
+        school: 'National Taiwan University of Science and Technology',
+        degree: 'M.S., Electronic and Computer Engineering, Group A',
+        logo: 'school-ntust.webp',
+        logoAlt: 'National Taiwan University of Science and Technology emblem',
+      },
     ],
+    experience: {
+      kicker: 'Experience',
+      title: 'Growing beyond the projects I build',
+      subtitle: 'Campus leadership, developer communities, hackathons, and mentorship have strengthened how I collaborate, communicate, and turn ideas into action.',
+      items: [
+        {
+          period: '2026',
+          organization: 'Micron',
+          category: 'Mentorship',
+          title: 'Global Women’s Mentorship Program',
+          description: 'Completed the Micron Global Women’s Mentorship Program 2026, gaining broader perspectives on technology careers and the global semiconductor industry through mentorship and industry exchange.',
+          image: 'experience-micron.webp',
+          imageAlt: 'Micron Global Women’s Mentorship Program 2026 completion certificate',
+          imageContain: true,
+        },
+        {
+          period: '2025',
+          organization: 'Microsoft',
+          category: 'Community',
+          title: 'Coding Angels 2025',
+          description: 'Joined Microsoft Coding Angels 2025 to keep building hands-on, collaborative experience through coding, community exchange, and technology career activities.',
+          image: 'moment-microsoft.jpg',
+          imageAlt: 'Microsoft Coding Angels 2025 event',
+        },
+        {
+          period: '2025',
+          organization: 'GDG on Campus',
+          category: 'Hackathon',
+          title: 'DevJam TW 2025',
+          description: 'Participated in the DevJam TW 2025 hackathon, collaborating intensively with student developers from different campuses to turn an idea into a presentable prototype.',
+          image: 'experience-devjam.webp',
+          imageAlt: 'DevJam TW 2025 participants',
+        },
+        {
+          period: '2025',
+          organization: 'National Chengchi University',
+          category: 'Award',
+          title: 'Creative Ideas Hackathon',
+          description: 'Competed with team “TD” and received the Creative Idea Monetization Award, gaining experience across ideation, pitching, and competition presentation.',
+          image: 'experience-creative-award.webp',
+          imageAlt: 'Creative Idea Monetization Award certificate from the 2025 Creative Ideas Hackathon',
+          imageContain: true,
+        },
+        {
+          period: '4th Cohort',
+          organization: 'Logitech G',
+          category: 'Campus Ambassador',
+          title: 'Logitech Campus Ambassador',
+          description: 'Served in the fourth cohort of Logitech campus ambassadors, supporting brand activities, campus outreach, and community engagement while developing event-planning and cross-campus collaboration skills.',
+          image: 'experience-logitech.webp',
+          imageAlt: 'Fourth-cohort Logitech campus ambassadors',
+        },
+        {
+          period: '2024',
+          organization: 'TSMC',
+          category: 'Award',
+          title: 'IMC Day 2024 Honorable Mention',
+          description: 'Received an honorable mention in TSMC IMC Day 2024, gaining experience in technical proposals, teamwork, and competition presentations.',
+          image: 'moment-tsmc.jpg',
+          imageAlt: 'TSMC IMC Day 2024 honorable mention',
+        },
+      ],
+    },
     projects: {
       kicker: 'Portfolio',
       title: 'Things I have built',
-      subtitle: 'From generative AI to full-stack systems — here are a few projects I have worked on.',
+      subtitle: 'Organized by technical theme with academic-stage labels, showing newer work first within each group.',
+      groups: [
+        {
+          id: 'generative',
+          period: 'GENERATIVE AI / AGENTS',
+          title: 'Generative AI & Intelligent Agents',
+          description: 'Product-oriented applications spanning research assistance, resume analysis, and AI-generated news memes.',
+        },
+        {
+          id: 'vision',
+          period: 'COMPUTER VISION / EDGE AI',
+          title: 'Computer Vision & Edge AI',
+          description: 'Model training, real-time recognition, and embedded deployment across vision algorithms, image processing, and hardware.',
+        },
+        {
+          id: 'software',
+          period: 'SOFTWARE / WEB',
+          title: 'Software & Web Systems',
+          description: 'Database-backed desktop and web applications designed around complete user and operational workflows.',
+        },
+      ],
       items: [
         {
+          stage: 'graduate',
+          stageLabel: 'Graduate',
+          category: 'generative',
+          rank: 70,
+          name: 'Research Paper Assistant Agent',
+          description:
+            'A LangGraph-based research assistant with dynamic tool routing across ChromaDB / SQLite RAG, PDF ingestion, arXiv retrieval, and paper comparison, delivered through a Streamlit interface.',
+          tags: ['LangGraph', 'RAG', 'ChromaDB', 'Streamlit'],
+          image: 'project-research-agent.svg',
+          status: 'The course version completes the core workflow. Future work includes more robust PDF metadata parsing, broader retrieval coverage, formal evaluation, and dependency upgrades.',
+          links: [],
+        },
+        {
+          stage: 'graduate',
+          stageLabel: 'Graduate',
+          category: 'vision',
+          rank: 70,
+          name: 'Edge AI Traffic Sign Recognition',
+          description:
+            'A MobileNetV2 model trained on 43 GTSRB traffic-sign classes, converted to TensorFlow Lite, and deployed on a Raspberry Pi with a USB camera, HSV-based ROI detection, and CLAHE enhancement.',
+          tags: ['MobileNetV2', 'TensorFlow Lite', 'Raspberry Pi', 'OpenCV'],
+          image: 'project-traffic-sign.webp',
+          status: 'The hardware demo runs at about 6 FPS with roughly 90 - 96 ms inference time, integrating model training, image processing, and edge deployment.',
+          links: [
+            { label: 'Watch demo', url: 'demo/traffic-sign-recognition.mp4', internal: true },
+          ],
+        },
+        {
+          stage: 'undergraduate',
+          stageLabel: 'Undergraduate',
+          category: 'generative',
+          rank: 50,
           name: 'MEMER',
           description:
             'An AI news-meme generator combining GPT-3 and DALL·E on a Flask + MySQL backend, with a community gallery. The research explores how generative AI can engage younger audiences with current affairs.',
@@ -181,6 +465,10 @@ export const content = {
           ],
         },
         {
+          stage: 'undergraduate',
+          stageLabel: 'Undergraduate',
+          category: 'software',
+          rank: 40,
           name: 'Restaurant Management System',
           description:
             'A JavaFX desktop application for running a restaurant — orders, menu, and account management — backed by a MySQL database.',
@@ -189,6 +477,10 @@ export const content = {
           links: [{ label: 'Demo video', url: 'https://youtu.be/UREnQsBJj5M' }],
         },
         {
+          stage: 'undergraduate',
+          stageLabel: 'Undergraduate',
+          category: 'software',
+          rank: 30,
           name: 'Ordering Website',
           description:
             'A full-stack food-ordering website with product browsing, a shopping cart, and checkout, built with JSP / Servlet and MySQL.',
@@ -197,6 +489,10 @@ export const content = {
           links: [{ label: 'Demo video', url: 'https://youtu.be/BcejJcJS1b8' }],
         },
         {
+          stage: 'graduate',
+          stageLabel: 'Graduate',
+          category: 'generative',
+          rank: 60,
           name: 'Resume Consultant (Team Project)',
           description:
             'A resume-review application that uses Aya Vision 8B to suggest improvements and generate interview questions for practice, delivered with React, Flask, and Docker.',
@@ -205,6 +501,10 @@ export const content = {
           links: [{ label: 'Demo video', url: 'https://youtu.be/er43JJh4aD4?si=jnkCgPaC2PcVc-2Z' }],
         },
         {
+          stage: 'undergraduate',
+          stageLabel: 'Undergraduate',
+          category: 'vision',
+          rank: 50,
           name: 'Face Recognition System',
           description:
             'A deep-learning course project using a classmate photo dataset, MTCNN for face detection, and FaceNet for facial embeddings and identity recognition.',
@@ -244,7 +544,10 @@ export const content = {
   },
 };
 
-export const SECTIONS = ['home', 'about', 'projects', 'contact'];
+export const SECTIONS = ['home', 'about', 'experience', 'projects', 'contact'];
+
+// 一般公開檔案路徑輔助（例如影片或下載檔案）
+export const publicAsset = (file) => `${import.meta.env.BASE_URL}${file}`;
 
 // 圖片路徑輔助：自動加上部署的 base 路徑（本機為 /，線上為 /blog/）
-export const asset = (file) => `${import.meta.env.BASE_URL}img/${file}`;
+export const asset = (file) => `${publicAsset('img/')}${file}`;
