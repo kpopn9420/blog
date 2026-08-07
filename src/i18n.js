@@ -52,12 +52,13 @@ export const content = {
         {
           name: 'MEMER',
           description:
-            '一個 AI 迷因產生器：結合 GPT-3 生成幽默文案與 DALL·E 生成圖像，後端以 Flask + MySQL 打造。相關研究成果已發表於 IEEE 論文。',
+            '結合 GPT-3 與 DALL·E 的 AI 新聞迷因產生器，後端以 Flask + MySQL 打造，並提供社群作品展示。研究聚焦於用生成式 AI 提升年輕世代對時事的關注。',
           tags: ['Flask', 'MySQL', 'GPT-3', 'DALL·E'],
-          image: '',
+          image: 'memer.webp',
+          status: '線上展示暫時關閉：網站託管與維護需要持續經費，研究成果與論文仍可由下方連結查看。',
           links: [
             { label: 'IEEE 論文', url: 'https://ieeexplore.ieee.org/document/10469091' },
-            { label: '線上網站', url: 'https://flask-memer-richie-98a652b4a55b.herokuapp.com/' },
+            { label: '國科會成果報告', url: 'https://drive.google.com/file/d/1fG1Mj2Ar0SHQ9e4I1tZND4-A3-pmURVx/view?usp=sharing' },
           ],
         },
         {
@@ -75,6 +76,22 @@ export const content = {
           tags: ['JSP', 'Servlet', 'MySQL'],
           image: 'ordering.png',
           links: [{ label: '示範影片', url: 'https://youtu.be/BcejJcJS1b8' }],
+        },
+        {
+          name: '履歷健檢顧問（團隊專案）',
+          description:
+            '讓使用者上傳履歷，由 Aya Vision 8B 分析內容並提供改善建議，也能產生面試題目協助練習，服務以 React、Flask 與 Docker 建置。',
+          tags: ['React', 'Flask', 'Docker', 'Aya Vision 8B'],
+          image: 'resume-consultant.webp',
+          links: [{ label: '示範影片', url: 'https://youtu.be/er43JJh4aD4?si=jnkCgPaC2PcVc-2Z' }],
+        },
+        {
+          name: '人臉辨識系統',
+          description:
+            '深度學習課程專案：以同學照片建立資料集，使用 MTCNN 偵測人臉，再以 FaceNet 完成人臉特徵擷取與身分辨識。',
+          tags: ['MTCNN', 'FaceNet', 'TensorFlow', 'Keras'],
+          image: 'face-recognition.webp',
+          links: [{ label: '專案簡報', url: 'https://drive.google.com/file/d/11IHVLfMUe32ZlXfvYcnyWPJS8KcLs1Tm/view?usp=sharing' }],
         },
       ],
     },
@@ -96,8 +113,10 @@ export const content = {
       messageLabel: '訊息',
       messagePlaceholder: '想說的話…',
       send: '送出訊息',
-      sent: '感謝你的訊息！',
-      note: '（送出後會開啟你的郵件軟體寄信給我。）',
+      sending: '傳送中…',
+      sent: '訊息已送出，謝謝你的聯絡！',
+      error: '目前無法送出，請改用左側 Email 直接聯絡我。',
+      note: '訊息會透過 Formspree 送到我的信箱；若送出失敗，也可以直接寄 Email。',
     },
     footer: {
       built: '以 React + Vite 打造',
@@ -152,12 +171,13 @@ export const content = {
         {
           name: 'MEMER',
           description:
-            'An AI meme generator that pairs GPT-3 for witty captions with DALL·E for imagery, on a Flask + MySQL backend. The work was published as an IEEE paper.',
+            'An AI news-meme generator combining GPT-3 and DALL·E on a Flask + MySQL backend, with a community gallery. The research explores how generative AI can engage younger audiences with current affairs.',
           tags: ['Flask', 'MySQL', 'GPT-3', 'DALL·E'],
-          image: '',
+          image: 'memer.webp',
+          status: 'The live demo is temporarily offline because hosting and maintenance require ongoing funding. The research report and paper remain available below.',
           links: [
             { label: 'IEEE Paper', url: 'https://ieeexplore.ieee.org/document/10469091' },
-            { label: 'Live site', url: 'https://flask-memer-richie-98a652b4a55b.herokuapp.com/' },
+            { label: 'NSTC Report', url: 'https://drive.google.com/file/d/1fG1Mj2Ar0SHQ9e4I1tZND4-A3-pmURVx/view?usp=sharing' },
           ],
         },
         {
@@ -175,6 +195,22 @@ export const content = {
           tags: ['JSP', 'Servlet', 'MySQL'],
           image: 'ordering.png',
           links: [{ label: 'Demo video', url: 'https://youtu.be/BcejJcJS1b8' }],
+        },
+        {
+          name: 'Resume Consultant (Team Project)',
+          description:
+            'A resume-review application that uses Aya Vision 8B to suggest improvements and generate interview questions for practice, delivered with React, Flask, and Docker.',
+          tags: ['React', 'Flask', 'Docker', 'Aya Vision 8B'],
+          image: 'resume-consultant.webp',
+          links: [{ label: 'Demo video', url: 'https://youtu.be/er43JJh4aD4?si=jnkCgPaC2PcVc-2Z' }],
+        },
+        {
+          name: 'Face Recognition System',
+          description:
+            'A deep-learning course project using a classmate photo dataset, MTCNN for face detection, and FaceNet for facial embeddings and identity recognition.',
+          tags: ['MTCNN', 'FaceNet', 'TensorFlow', 'Keras'],
+          image: 'face-recognition.webp',
+          links: [{ label: 'Project slides', url: 'https://drive.google.com/file/d/11IHVLfMUe32ZlXfvYcnyWPJS8KcLs1Tm/view?usp=sharing' }],
         },
       ],
     },
@@ -196,8 +232,10 @@ export const content = {
       messageLabel: 'Message',
       messagePlaceholder: 'Say hello…',
       send: 'Send message',
-      sent: 'Thanks for reaching out!',
-      note: '(Submitting opens your email client to send me a message.)',
+      sending: 'Sending…',
+      sent: 'Message sent — thanks for reaching out!',
+      error: 'The form could not send right now. Please email me directly using the link on the left.',
+      note: 'Formspree delivers this message to my inbox. If it fails, you can also email me directly.',
     },
     footer: {
       built: 'Built with React + Vite',
