@@ -161,8 +161,10 @@ export const content = {
             '以 LangGraph 建立具動態工具調度能力的研究助理，整合 ChromaDB / SQLite RAG、PDF 論文上傳、arXiv 檢索與論文比較，並以 Streamlit 提供操作介面。',
           tags: ['LangGraph', 'RAG', 'ChromaDB', 'Streamlit'],
           image: 'project-research-agent.svg',
-          status: '課程版本已完成核心流程；目前 PDF metadata 解析較依賴固定格式，檢索資料集與套件版本也較固定，後續可加入更穩健的解析、評測與依賴更新。',
-          links: [],
+          status: '公開示範網站目前僅提供 RAG 檢索、論文比較與證據引用等功能；不包含需要 OpenAI API Key 的 Live AI 智慧生成。',
+          links: [
+            { label: '開啟 RAG 示範網站', url: 'https://research-paper-assistant-agent.streamlit.app/' },
+          ],
         },
         {
           stage: 'graduate',
@@ -430,8 +432,10 @@ export const content = {
             'A LangGraph-based research assistant with dynamic tool routing across ChromaDB / SQLite RAG, PDF ingestion, arXiv retrieval, and paper comparison, delivered through a Streamlit interface.',
           tags: ['LangGraph', 'RAG', 'ChromaDB', 'Streamlit'],
           image: 'project-research-agent.svg',
-          status: 'The course version completes the core workflow. Future work includes more robust PDF metadata parsing, broader retrieval coverage, formal evaluation, and dependency upgrades.',
-          links: [],
+          status: 'The public demo currently provides RAG retrieval, paper comparison, and evidence citation features only. Live AI generation that requires an OpenAI API key is not included.',
+          links: [
+            { label: 'Open RAG demo', url: 'https://research-paper-assistant-agent.streamlit.app/' },
+          ],
         },
         {
           stage: 'graduate',
